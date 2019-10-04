@@ -12,4 +12,10 @@ public class Terakhir extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stepterakhir);
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.from_left, R.anim.anim_right);
+    }
 }

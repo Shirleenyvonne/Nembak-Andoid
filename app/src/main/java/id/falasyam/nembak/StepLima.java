@@ -24,6 +24,7 @@ public class StepLima extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(StepLima.this, Terakhir.class);
                 startActivity(i);
+                overridePendingTransition(R.anim.from_right, R.anim.anim_left);
                 finish();
             }
         });
@@ -45,6 +46,7 @@ public class StepLima extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 finish();
+                overridePendingTransition(R.anim.from_left, R.anim.anim_right);
             }
         });
         builder.setPositiveButton("Tidak", new DialogInterface.OnClickListener() {
@@ -56,5 +58,11 @@ public class StepLima extends AppCompatActivity {
 
         AlertDialog alert = builder.create();
         alert.show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.from_left, R.anim.anim_right);
     }
 }

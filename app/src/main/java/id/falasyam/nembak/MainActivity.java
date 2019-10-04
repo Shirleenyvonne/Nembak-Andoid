@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, StepDua.class);
                 startActivity(i);
+                overridePendingTransition(R.anim.from_right, R.anim.anim_left);
             }
         });
     }

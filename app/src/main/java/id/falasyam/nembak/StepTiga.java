@@ -22,6 +22,7 @@ public class StepTiga extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(StepTiga.this, StepEmpat.class);
                 startActivity(i);
+                overridePendingTransition(R.anim.from_right, R.anim.anim_left);
                 finish();
             }
         });
@@ -32,8 +33,15 @@ public class StepTiga extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(StepTiga.this, StepDua.class);
                 startActivity(i);
+                overridePendingTransition(R.anim.from_left, R.anim.anim_right);
                 finish();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.from_left, R.anim.anim_right);
     }
 }
